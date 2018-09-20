@@ -34,5 +34,16 @@ export function getCompletedLines(grid, tetromino) {
         prev[cur.y] = prev[cur.y] ? prev[cur.y] + 1 : 1;
         return prev;
     }, []);
-    
+    for (const row in rows) {
+        let flag = true;
+        for (let j = 0; j < 10; j++) {
+            if (gridCopy[j][row] === 'grey') {
+                flag = false;
+            }
+        }
+        if (flag) {
+            linesToClear.push(row);
+        }
+    }
+    return linesToClear;
 }
