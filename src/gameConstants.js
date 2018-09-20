@@ -24,7 +24,7 @@ export default {
                 [0, 0, 0, 0],
                 [0, 0, 0, 0],
             ],
-            color: 'blue'
+            color: 'blue',
         },
         cross: {
             shape: [
@@ -33,7 +33,25 @@ export default {
                 [0, 0, 0, 0],
                 [0, 0, 0, 0],
             ],
-            color: 'green'
-        }
+            color: 'green',
+        },
+        leftGun: {
+            shape: [
+                [0, 0, 1, 0],
+                [1, 1, 1, 0],
+                [0, 0, 0, 0],
+                [0, 0, 0, 0],
+            ],
+            color: 'purple',
+        },
+        rightGun: {
+            shape: [
+                [0, 0, 1, 0],
+                [1, 1, 1, 0],
+                [0, 0, 0, 0],
+                [0, 0, 0, 0],
+            ],
+            color: 'orange',
+        },
     }
 }
