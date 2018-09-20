@@ -38,7 +38,7 @@ function nextTetromino(state = {}, action) {
                 shape: tetrominos[action.nextRandomShape].shape,
                 name: action.nextRandomShape,
                 color: tetrominos[action.nextRandomShape].color,
-                offsetX: 10
+                offsetX: 10,
                 offsetY: blockUnit,
             };
         default:
