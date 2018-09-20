@@ -23,5 +23,19 @@ function activeTetrominos(state = initialGrid, action) {
     switch (action.type) {
         case actions.ADD_TETROMINO:
             return getNewClearedGrid(state, action.currentTetromino, action.color);
+        case actions.START_GAME:
+            return initialGrid;
+        default:
+            return state;
+    }
+}
+
+function nextTetromino(state = {}, action) {
+    switch (action.type) {
+        case actions.START_GAME:
+        case actions.ADD_TETROMINO:
+            return {
+                shape:
+            }
     }
 }
