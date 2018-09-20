@@ -30,3 +30,22 @@ export const addTetromino = (currentTetromino, nextTetromino) => {
     };
 };
 
+export const startGame = () => {
+    const { shapesMapping } = gameConstants;
+    const currentRandomNumber = Math.floor(Math.random() * 7);
+    const nextRandomNumber = Math.floor(Math.random() * 7);
+    const currentRandomShape = shapesMapping[currentRandomNumber];
+    const nextRandomShape = shapesMapping[nextRandomNumber];
+
+    return {
+        type: START_GAME,
+        currentRandomShape,
+        nextRandomShape,
+    };
+};
+
+export const pauseGame = () => ({
+    type: PAUSE_GAME,
+});
+
+export con
