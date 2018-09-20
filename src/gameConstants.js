@@ -9,7 +9,31 @@ export default {
     ],
     tetrominos: {
         straight: {
-            shape:
+            shape: [
+                [1, 1, 1, 1],
+                [0, 0, 0, 0],
+                [0, 0, 0, 0],
+                [0, 0, 0, 0],
+            ],
+            color: 'red',
+        },
+        square: {
+            shape: [
+                [1, 1, 0, 0],
+                [1, 1, 0, 0],
+                [0, 0, 0, 0],
+                [0, 0, 0, 0],
+            ],
+            color: 'blue'
+        },
+        cross: {
+            shape: [
+                [0, 1, 0, 0],
+                [1, 1, 1, 0],
+                [0, 0, 0, 0],
+                [0, 0, 0, 0],
+            ],
+            color: 'green'
         }
     }
 }
