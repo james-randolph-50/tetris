@@ -56,5 +56,11 @@ export function getNewClearedGrid(grid, tetromino, color) {
             gridCopy[j][row] = 'grey';
         }
     }
-    
+    for (let row = linesToClear[0] - 1; row >= 0; row--) {
+        const shift = linesToClear.length;
+        for (let j = 0; j < 10; j++) {
+            gridCopy[j][row + shift] = gridCopy[j][row];
+        }
+    }
+    return gridCopy;
 }
