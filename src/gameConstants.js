@@ -53,5 +53,24 @@ export default {
             ],
             color: 'orange',
         },
-    }
-}
+        leftSnake: {
+            shape: [
+                [1, 1, 0, 0],
+                [0, 1, 1, 0],
+                [1, 1, 0, 0],
+                [1, 1, 0, 0],
+            ],
+            color: 'yellow',
+        },
+        rightSnake: {
+            shape: [
+                [0, 1, 1, 0],
+                [1, 1, 0, 0],
+                [0, 0, 0, 0],
+                [0, 0, 0, 0],
+            ],
+            color: 'brown'
+        },
+    },
+    initialGrid,
+};
