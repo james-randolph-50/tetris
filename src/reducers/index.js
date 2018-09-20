@@ -76,3 +76,13 @@ function gameScore(state = {}, action) {
                 return state;
     }
 }
+
+const tetrisApp = combineReducers({
+	activeTetrominos,
+	currentTetromino,
+	nextTetromino,
+	gameScore,
+	gameStatus,
+});
+
+export default tetrisApp;
