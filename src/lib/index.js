@@ -112,7 +112,14 @@ export function checkCollisions(direction, activeTetrominos, currentTetromino) {
             if (coord) {
                 const totalX = nx + currentX + j;
                 const totalY = ny + currentY + i;
+                if (totalX < 0 || totalY >= 22 || totalX >= 10 || occupied(activeTetrominos, totalX, totalY)) {
+                    collision = true;
+                }
+                if (collision && currentY === 0 && direction === 'down') {
+                    gameOver = true;
+                }
             }
         }
     }
+    return gameOver ? 'GAME_OVER' : collision;
 }
