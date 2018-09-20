@@ -20,5 +20,13 @@ export const addTetromino = (currentTetromino, nextTetromino) => {
     const { shapesMapping } = gameConstants;
     const newRandomNumber = Math.floor(Math.random() * 7 );
     const nextRandomShape = shapesMapping[newRandomNumber];
-    
-}
+
+    return {
+        type: ADD_TETROMINO,
+        currentTetromino,
+        color: currentTetromino.color,
+        nextTetromino,
+        nextRandomShape,
+    };
+};
+
