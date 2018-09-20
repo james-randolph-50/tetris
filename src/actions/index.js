@@ -15,3 +15,10 @@ export const MOVE_DOWN = 'MOVE_DOWN';
 export const ADD_TETROMINO = 'ADD_TETROMINO';
 export const PAUSE_GAME = 'PAUSE_GAME';
 export const UNPAUSE_GAME = 'UNPAUSE_GAME';
+
+export const addTetromino = (currentTetromino, nextTetromino) => {
+    const { shapesMapping } = gameConstants;
+    const newRandomNumber = Math.floor(Math.random() * 7 );
+    const nextRandomShape = shapesMapping[newRandomNumber];
+    
+}
