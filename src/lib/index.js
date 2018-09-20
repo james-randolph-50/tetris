@@ -29,4 +29,10 @@ export function getNewColoredGrid(grid, tetromino, color) {
 export function getCompletedLines(grid, tetromino) {
     const linesToClear = [];
     const gridCopy = getNewColoredGrid(grid, tetromino, 'tmp');
+    const coords = getActualCoordinates(tetromino);
+    const rows = coords.reduce((prev, cur) => {
+        prev[cur.y] = prev[cur.y] ? prev[cur.y] + 1 : 1;
+        return prev;
+    }, []);
+    
 }
