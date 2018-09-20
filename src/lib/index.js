@@ -16,4 +16,8 @@ export function getActualCoordinates(newTetromino) {
     return coordinates;
 }
 
-export
+export function getNewColoredGrid(grid, tetromino, color) {
+    const gridCopy = grid.map((x) => [...x]);
+    const coords = getActualCoordinates(tetromino);
+    for (let j = 0; j < coords.length; j++)
+}
