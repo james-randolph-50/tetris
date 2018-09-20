@@ -105,4 +105,14 @@ export function checkCollisions(direction, activeTetrominos, currentTetromino) {
             ny = 1;
             break;
     }
+
+    for (let i = 0; i < currentTetromino.shape.length; i++) {
+        for (let j = 0; j < currentTetromino.shape[i].length; j++) {
+            const coord = currentTetromino.shape[i][j];
+            if (coord) {
+                const totalX = nx + currentX + j;
+                const totalY = ny + currentY + i;
+            }
+        }
+    }
 }
