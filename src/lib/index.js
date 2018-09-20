@@ -86,3 +86,17 @@ export function rotateArray(tetromino) {
     return ret;
 }
 
+export function checkCollisions(direction, activeTetrominos, currentTetromino) {
+    const { blockUnit } = gameConstants;
+    const currentX = currentTetromino.offsetX / blockUnit;
+    const currentY = currentTetromino.offsetY / blockUnit;
+    let collision = false;
+    let gameOver = false;
+    let nx = 0, ny = 0;
+
+    switch(direction) {
+        case "left":
+            nx = -1;
+            break;
+    }
+}
