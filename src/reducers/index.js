@@ -62,3 +62,17 @@ function currentTetromino(state = {}, action) {
             return state;
     }
 }
+
+function gameScore(state = {}, action) {
+    switch (action.type) {
+        case actions.START_GAME:
+            return {
+                points: 0,
+                clearedLines: 0,
+            };
+        case actions.ADD_SCORE:
+            return Object.assign({}, state, { points: action.points + state.points, clearedLines: action.clearedLines + state.clearedLines });
+        default:
+                return state;
+    }
+}
