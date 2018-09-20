@@ -47,3 +47,14 @@ export function getCompletedLines(grid, tetromino) {
     }
     return linesToClear;
 }
+
+export function getNewClearedGrid(grid, tetromino, color) {
+    const linesToClear = getCompletedLines(grid, tetromino);
+    const gridCopy = getNewColoredGrid(grid, tetromino, color);
+    for (const row of linesToClear) {
+        for (let j = 0; j < 10; j++) {
+            gridCopy[j][row] = 'grey';
+        }
+    }
+    
+}
