@@ -98,5 +98,11 @@ export function checkCollisions(direction, activeTetrominos, currentTetromino) {
         case "left":
             nx = -1;
             break;
+        case "right":
+            nx = 1;
+            break;
+        case "down":
+            ny = 1;
+            break;
     }
 }
