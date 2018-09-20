@@ -79,5 +79,10 @@ export function rotateArray(tetromino) {
             }
         }
     }
-    
+    const fill = new Array(closestX).fill(0);
+    for (let i = 0; i < n; ++i) {
+        ret[i] = ret[i].slice(closestX).concat(fill);
+    }
+    return ret;
 }
+
