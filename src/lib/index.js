@@ -64,3 +64,20 @@ export function getNewClearedGrid(grid, tetromino, color) {
     }
     return gridCopy;
 }
+
+export function rotateArray(tetromino) {
+    const matrix = tetromino.shape;
+    const n = matrix.length;
+    const ret = [[], [], [], []];
+    let closestX = 10;
+
+    for (let i = 0; i < n; ++i) {
+        for (let j = 0; j < n; ++j) {
+            ret[i][j] = matrix[n - j - 1][i];
+            if (ret[i][j]) {
+                closestX = Math.min(closestX, j);
+            }
+        }
+    }
+    
+}
