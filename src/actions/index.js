@@ -62,3 +62,12 @@ export const changePauseState = () => (
         }
     }
 );
+
+export const gameOver = () => ({
+    type: GAME_OVER,
+});
+
+export const addScore = (clearedLines) => ({
+    type: ADD_SCORE,
+    points: Math.pow(clearedLines, 2) * 100,
+})
