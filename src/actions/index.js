@@ -136,3 +136,9 @@ export const moveTetromino = (direction) => (
         }
     }
 );
+
+export const loadMenu = () => (
+    function(dispatch) {
+        function handleSpaceBar(e) {}
+    }
+)
