@@ -152,6 +152,11 @@ export const loadMenu = () => (
 export const loadGame = () => (
     function (dispatch, getState) {
         dispatch(startGame());
-        function handleMoving(e) {}
+        function handleMoving(e) {
+            case 37:
+                e.preventDefault();
+                dispatch(moveTetromino('left'));
+                break;
+        }
     }
 )
