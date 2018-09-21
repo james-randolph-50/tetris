@@ -157,6 +157,17 @@ export const loadGame = () => (
                 e.preventDefault();
                 dispatch(moveTetromino('left'));
                 break;
+            case 39:
+                e.preventDefault();
+                dispatch(moveTetromino('right'));
+                break;
+            case 40:
+                e.preventDefault();
+                dispatch(moveTetromino('down'));
+                break;
+            default:
+                break;
         }
     }
+    
 )
