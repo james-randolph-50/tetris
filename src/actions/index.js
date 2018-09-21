@@ -100,3 +100,9 @@ export const rotatedTetromino = () => (
         }
     }
 );
+
+export const moveTetromino = (direction) => (
+    function (dispatch, getState) {
+        const { activeTetrominos, currentTetromino, nextTetromino, gameStatus } = getState();
+    }
+)
