@@ -153,6 +153,7 @@ export const loadGame = () => (
     function (dispatch, getState) {
         dispatch(startGame());
         function handleMoving(e) {
+            switch (e.keyCode) {
             case 37:
                 e.preventDefault();
                 dispatch(moveTetromino('left'));
@@ -179,4 +180,18 @@ export const loadGame = () => (
                 break;
         }
     }
-)
+    dropTetromino(dispatch, Date.now(), getState);
+    window.addEventListener('keydown', handleMoving);
+    window.addEventListener('keydown', handleRotation);
+}
+);
+
+function dropTetromino(dispatch, startTime, getState) {
+	const currentTime = Date.now();
+	const { gameStatus } = getState();
+	if (currentTime - startTime >= 500 && gameStatus !== 'PAUSED' && gameStatus !== 'GAME_OVER') {
+		startTime = currentTime;
+		dispatch(moveTetromino('down'));
+	}
+	requestAnimationFrame((dropTetromino.bind(this, dispatch, startTime, getState)));
+}
