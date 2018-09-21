@@ -110,6 +110,22 @@ export const moveTetromino = (direction) => (
             return;
         }
 
-        switch (direction)
+        switch (direction) {
+            case 'left':
+                if (collisionCheck === false) {
+                    dispatch(moveLeft());
+                }
+                return;
+            case 'right':
+                if (collisionCheck === false) {
+                    dispatch(moveRight());
+                }
+            case 'down':
+                if (collisionCheck === false) {
+                    dispatch(moveDown());
+                } else if (collisionCheck === GAME_OVER) {
+                    dispatch(gameOver());
+                } else {}
+        }
     }
 )
