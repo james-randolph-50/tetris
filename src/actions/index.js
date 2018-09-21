@@ -55,6 +55,10 @@ export const unpauseGame = () => ({
 export const changePauseState = () => (
     function (dispatch, getState) {
         const { gameStatus } = getState();
-        if (gameStatus === 'PAUSED')
+        if (gameStatus === 'PAUSED') {
+            dispatch(unpauseGame());
+        } else {
+            dispatch(pauseGame());
+        }
     }
-)
+);
