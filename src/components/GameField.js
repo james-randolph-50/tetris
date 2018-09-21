@@ -10,18 +10,31 @@ import style from '../styles/styles.css';
 const { fieldHeight, fieldWidth } = gameConstants;
 
 let GameField = ({ isPlaying, isPaused, isGameOver }) => {
-    if (isPlaying) {
-        return (
-            <div style={{display: 'inline'}}>
-                <div className={style.gameField}>
-                    <Stage width={fieldWidth} height={fieldHeight}>
-                        <Layer>
-                            <CurrentTetromino />
-                            <ActiveTetrominos />
-                        </Layer>
-                    </Stage>
-                    { isPaused ? <Banner label="PAUSED" color="black" opacity=".5"/> : null}
-            </div></div>
-        )
-    }
-}
+	if (isPlaying) {
+		return (
+			<div style={{display: 'inline'}}>
+				<div className={style.gameField}>
+					<Stage width={fieldWidth} height={fieldHeight}>
+						<Layer>
+							<CurrentTetromino />
+							<ActiveTetrominos />
+						</Layer>
+					</Stage>
+					{ isPaused ? <Banner label="PAUSED" color="black" opacity=".5" /> : null}
+				</div>
+				{ isGameOver ? <Banner label="GAME OVER" color="red" opacity=".8" /> : null}
+			</div>
+		);
+	}
+	return null;
+};
+
+const mapStateToProps = ({ gameStatus }) => ({
+	isPlaying: gameStatus !== 'IDLE',
+	isPaused: gameStatus === 'PAUSED',
+	isGameOver: gameStatus === 'GAME_OVER',
+});
+
+GameField = connect(mapStateToProps)(GameField);
+
+export default GameField;
