@@ -125,7 +125,14 @@ export const moveTetromino = (direction) => (
                     dispatch(moveDown());
                 } else if (collisionCheck === GAME_OVER) {
                     dispatch(gameOver());
-                } else {}
+                } else {
+                    const clearedLines = getCompletedLines(activeTetrominos, currentTetromino).length;
+                    dispatch(addScore(clearedLines));
+                    dispatch(addTetromino(currentTetromino, nextTetromino));
+                }
+                return;
+            default:
+                return;
         }
     }
-)
+);
