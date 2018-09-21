@@ -27,5 +27,3 @@ let Banner = ({label, color, opacity, dispatch}) => {
 
 Banner = connect()(Banner);
 export default Banner;
-    )
-}
