@@ -70,4 +70,22 @@ export const gameOver = () => ({
 export const addScore = (clearedLines) => ({
     type: ADD_SCORE,
     points: Math.pow(clearedLines, 2) * 100,
-})
+    clearedLines,
+});
+
+export const moveRight = () => ({
+    type: MOVE_RIGHT,
+});
+
+export const moveLeft = () => ({
+    type: MOVE_LEFT,
+});
+
+export const moveDown = () => ({
+    type: MOVE_DOWN,
+});
+
+export const rotateRight = (rotatedTetromino) => ({
+    type: ROTATE_TETROMINO,
+    rotatedTetromino,
+});
