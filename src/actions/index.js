@@ -104,5 +104,12 @@ export const rotatedTetromino = () => (
 export const moveTetromino = (direction) => (
     function (dispatch, getState) {
         const { activeTetrominos, currentTetromino, nextTetromino, gameStatus } = getState();
+        const collisionCheck = checkCollisions(diriection, activeTetrominos, currentTetromino);
+
+        if (gameStatus === 'PAUSED' || gameStatus === 'GAME_OVER') {
+            return;
+        }
+
+        switch (direction)
     }
 )
