@@ -148,3 +148,10 @@ export const loadMenu = () => (
         window.addEventListener('keyup', handleSpaceBar);
     }
 );
+
+export const loadGame = () => (
+    function (dispatch, getState) {
+        dispatch(startGame());
+        function handleMoving(e) {}
+    }
+)
