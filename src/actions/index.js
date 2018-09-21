@@ -169,5 +169,14 @@ export const loadGame = () => (
                 break;
         }
     }
-    
+    function handleRotation(e) {
+        switch (e.keyCode) {
+            case 38:
+                e.preventDefault();
+                dispatch(rotateTetromino());
+                break;
+            default:
+                break;
+        }
+    }
 )
