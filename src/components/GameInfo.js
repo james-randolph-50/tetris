@@ -14,6 +14,14 @@ let GameInfo =({points, clearedLines, nextTetromino, isPLaying, isPaused, isGame
         return (
             <div className={style.gameInfo}>
                 <RaisedButton
+                    label={isPaused ? 'UNPAUSE' : 'PAUSE'}
+                    style={buttonStyle}
+                    primary
+                    onCLick={() => dispatch(changePauseState())}
+                    disabled={isGameOver}
+                />
+                <div className={style.scorePanel}>
+                </div>
             </div>
         )
     }
