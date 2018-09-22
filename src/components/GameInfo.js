@@ -11,18 +11,41 @@ let GameInfo =({points, clearedLines, nextTetromino, isPLaying, isPaused, isGame
         margin: '20% 0',
     };
     if (isPlaying) {
-        return (
-            <div className={style.gameInfo}>
-                <RaisedButton
-                    label={isPaused ? 'UNPAUSE' : 'PAUSE'}
-                    style={buttonStyle}
-                    primary
-                    onCLick={() => dispatch(changePauseState())}
-                    disabled={isGameOver}
-                />
-                <div className={style.scorePanel}>
-                </div>
-            </div>
-        )
-    }
-}
+		return (
+			<div className={style.gameInfo}>
+				<RaisedButton
+					label={isPaused ? 'UNPAUSE' : 'PAUSE'}
+					style={buttonStyle}
+					primary
+					onClick={() => dispatch(changePauseState())}
+					disabled={isGameOver}
+				/>
+				<div className={style.scorePanel}>
+					<h2>Next Shape</h2>
+					<Stage width={250} height={100}>
+						<Layer>
+							<NextTetromino />
+						</Layer>
+					</Stage>
+				</div>
+				<div className={style.scorePanel}>
+					<h2>Score</h2>
+					<span className={style.scoreInfo}>{points}</span>
+					<h2>Lines</h2>
+					<span className={style.scoreInfo}>{clearedLines}</span>
+				</div>
+			</div>
+		);
+	}
+	return null;
+};
+
+const mapStateToProps = ({ gameStatus }) => ({
+	isPlaying: gameStatus !== 'IDLE',
+	isPaused: gameStatus === 'PAUSED',
+	isGameOver: gameStatus === 'GAME_OVER',
+});
+
+GameInfo = connect(mapStateToProps)(GameInfo);
+
+export default GameInfo;
