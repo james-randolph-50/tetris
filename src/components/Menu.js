@@ -9,10 +9,15 @@ class Menu extends React.Component {
     render() {
         return (
             <div>
-                <h1
+                <h1 className={style.pageBanner}>Tetris</h1>
+                {!this.props.isPlaying ? <h2 style={{color: 'grey'}}>Press space to start the game</h2> : null }
             </div>
-        )
+        );
     }
 }
+
+Menu.propType = {
+    is:isPlaying: React.PropTypes.string,
+};
 
 export default Menu;
