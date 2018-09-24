@@ -9,3 +9,8 @@ const mapStateToProps = ({ currentTetromino }) => ({
     offsetY: currentTetromino.offsetY,
 });
 
+const CurrentTetromino = connect(
+	mapStateToProps
+)(Tetromino);
+
+export default CurrentTetromino;
