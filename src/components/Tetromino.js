@@ -34,3 +34,12 @@ const Tetromino = ({ shape, offsetX, offsetY, color }) => {
 		</Group>
 	);
 };
+
+Tetromino.propTypes = {
+	offsetX: React.PropTypes.number,
+	offsetY: React.PropTypes.number,
+	shape: React.PropTypes.array,
+	color: React.PropTypes.string,
+};
+
+export default Tetromino;
