@@ -11,10 +11,17 @@ injectTapEventPlugin();
 const { fieldWidth, fieldHeight } = gameConstants;
 
 const TetrisGame = () => (
-    <div>
-        <div>
-            <MenuContainer />
-        </div>
-        <div style={{position: 'relative'}}></div>
-    </div>
-)
+	<div>
+		<div>
+			<MenuContainer />
+		</div>
+		<div style={{position: 'relative'}}>
+			<GameField width={fieldWidth} height={fieldHeight} />
+			<MuiThemeProvider>
+				<CurrentGameInfo />
+			</MuiThemeProvider>
+		</div>
+	</div>
+);
+
+export default TetrisGame;
