@@ -13,4 +13,10 @@ function getCoordinates(shape) {
             }
         }
     }
+    return coordinates;
+}
+
+function tetrominoGroup(xs, ys, color) {
+    const arr = [];
+    for (let i = 0; i< xs.length;)
 }
