@@ -19,6 +19,7 @@ function getCoordinates(shape) {
 function tetrominoGroup(xs, ys, color) {
     const arr = [];
     for (let i = 0; i< xs.length; i++) {
-        arr.push(<Rect key={i} width={blockUnit} height={blockUnit} x={xs[i]} y={ys[i]} fill={color})
+        arr.push(<Rect key={i} width={blockUnit} height={blockUnit} x={xs[i]} y={ys[i]} fill={color} stroke="black" strokeWidth={5} />);
     }
+    return arr;
 }
