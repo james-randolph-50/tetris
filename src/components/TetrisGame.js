@@ -5,3 +5,7 @@ import gameConstants from '../gameConstants.js';
 import MenuContainer from '../containers/MenuContainer.js';
 import CurrentGameInfo from '../containers/CurrentGameInfo.js';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
+injectTapEventPlugin();
+
+const { fieldWidth, fieldHeight } = gameConstants;
