@@ -9,4 +9,4 @@ const ActiveTetrominos = connect(
     mapStateToProps
 )(TetrominosList);
 
-export default AciveTetrominos;
+export default ActiveTetrominos;
