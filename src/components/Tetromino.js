@@ -23,3 +23,14 @@ function tetrominoGroup(xs, ys, color) {
     }
     return arr;
 }
+
+const Tetromino = ({ shape, offsetX, offsetY, color }) => {
+	const coordinates = getCoordinates(shape);
+	const xs = coordinates.map((coord) => (coord.x * blockUnit) + offsetX);
+	const ys = coordinates.map((coord) => (coord.y * blockUnit) + offsetY);
+	return (
+		<Group>
+			{tetrominoGroup(xs, ys, color)}
+		</Group>
+	);
+};
