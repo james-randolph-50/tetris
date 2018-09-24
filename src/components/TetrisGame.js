@@ -9,3 +9,12 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 injectTapEventPlugin();
 
 const { fieldWidth, fieldHeight } = gameConstants;
+
+const TetrisGame = () => (
+    <div>
+        <div>
+            <MenuContainer />
+        </div>
+        <div style={{position: 'relative'}}></div>
+    </div>
+)
