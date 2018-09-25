@@ -1,22 +1,23 @@
-import React, { Component } from 'react';
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import React from 'react';
 import ReactDOM from 'react-dom';
-import logo from './logo.svg';
-import './App.css';
+import ReduxThunk from 'redux-thunk';
+import Normalize from 'normalize.css';
+import TetrisGame from './components/TetrisGame';
+import TetrisApp from './reducers/index.js';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and testingtesting.
-        </p>
-      </div>
-    );
-  }
-}
+const store = createStore(
+	TetrisApp,
+	applyMiddleware(ReduxThunk)
+);
 
-export default App;
+const App = () => (
+	<Provider store={store}>
+		<div>
+			<TetrisGame />
+		</div>
+	</Provider>
+);
+
+ReactDOM.render(<App />, document.getElementById('react-app'));
