@@ -3,7 +3,7 @@ function occupied(grid, x, y) {
 }
 
 export function getActualCoordinates(newTetromino) {
-    const coordinates = [],
+    const coordinates = [];
     const { shape, offsetX, offsetY } = newTetromino;
     const { blockUnit } = gameConstants;
     for (let i = 0; i < shape.length; i++) {
