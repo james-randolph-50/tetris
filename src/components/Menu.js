@@ -17,7 +17,7 @@ class Menu extends React.Component {
 }
 
 Menu.propType = {
-    is:isPlaying: React.PropTypes.string,
+    isPlaying: React.PropTypes.string,
 };
 
 export default Menu;
