@@ -4,3 +4,9 @@ body {
     text-align: center;
     font-family: 'Roboto', sans-serif;
 }
+
+.pageBanner {
+    margin-top: 40px;
+    font-size: 50px;
+    letter-spacing: 40px;
+}
