@@ -1,3 +1,5 @@
+import gameConstants from '../gameConstants.js';
+
 function occupied(grid, x, y) {
     return grid[x][y] !== 'grey';
 }

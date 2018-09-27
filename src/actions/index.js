@@ -90,7 +90,7 @@ export const rotateRight = (rotatedTetromino) => ({
     rotatedTetromino,
 });
 
-export const rotatedTetromino = () => (
+export const rotateTetromino = () => (
     function (dispatch, getState) {
         const {activeTetrominos, currentTetromino, gameStatus } = getState();
         const rotatedTetromino = Object.assign({}, currentTetromino);
