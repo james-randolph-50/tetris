@@ -1,4 +1,5 @@
-import RaisedButton from 'material-ui/RaisedButton';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { RaisedButton } from 'material-ui';
 import React from 'react';
 import { connect } from 'react-redux';
 import { Layer, Stage } from 'react-konva';
