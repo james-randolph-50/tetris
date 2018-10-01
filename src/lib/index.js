@@ -95,7 +95,7 @@ export function checkCollisions(direction, activeTetrominos, currentTetromino) {
     let collision = false;
     let gameOver = false;
     let nx = 0, ny = 0;
-
+// eslint-disable-next-line
     switch(direction) {
         case "left":
             nx = -1;
