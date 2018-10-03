@@ -1,6 +1,7 @@
 import React from 'react';
 import { Rect, Group } from 'react-konva';
 import gameConstants from '../gameConstants.js';
+import PropTypes from 'prop-types';
 
 const { blockUnit } = gameConstants;
 
